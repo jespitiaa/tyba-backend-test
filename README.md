@@ -5,6 +5,8 @@ The solution uses a cloud DBaaS called AtlasDB that provides access to a MongoDB
 
 The code includes some comments that show the reasoning behind the decissions that were made, knowing that some other variables (such as other endpoint interaction) could make the code not be the most optimal solution.
 
+In order to execute the app locally, place `dbcrt-dev.pem` and `.env` files on the root dir, run `npm install`, then run `npm start`.
+
 TODOS/PENDINGS:
 - finish setting up the docker configuration
 - make the MongoDB instance part of the container and establish a network, instead of using a cloud solution
