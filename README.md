@@ -5,9 +5,10 @@ The solution uses a cloud DBaaS called AtlasDB that provides access to a MongoDB
 
 The code includes some comments that show the reasoning behind the decissions that were made, knowing that some other variables (such as other endpoint interaction) could make the code not be the most optimal solution.
 
+## executing the application
 In order to execute the app locally, place `dbcrt-dev.pem` and `.env` files on the root dir, run `npm install`, then run `npm start`.
 
-TODOS/PENDINGS:
+## TODOS/PENDINGS:
 - finish setting up the docker configuration
 - make the MongoDB instance part of the container and establish a network, instead of using a cloud solution
 - implement logout. Intended approach was to have refreshTokens along with the accessTokens that were sent as headers too, and would be required for regenerating tokens. Logging out would then be a matter of un-caching the refreshToken of an user.
