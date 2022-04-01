@@ -13,3 +13,4 @@ In order to execute the app locally, place `dbcrt-dev.pem` and `.env` files on t
 - make the MongoDB instance part of the container and establish a network, instead of using a cloud solution
 - implement logout. Intended approach was to have refreshTokens along with the accessTokens that were sent as headers too, and would be required for regenerating tokens. Logging out would then be a matter of un-caching the refreshToken of an user.
 - include error test cases in the postman collection
+- improve the postman collection by setting variables for the host, the usernames, and the tokens
