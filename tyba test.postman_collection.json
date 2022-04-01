@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "91af5340-92ac-4cf3-bcb9-574c21047ee0",
+		"name": "tyba test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "unauthenticated places get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql('Auth token is not supplied');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/places/nearbyRestaurants?lat=4.645821948707192&lng=-74.12839062615888",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"places",
+						"nearbyRestaurants"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "4.645821948707192"
+						},
+						{
+							"key": "lng",
+							"value": "-74.12839062615888"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup new user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test2\",\r\n    \"password\":\"eyhola\",\r\n    \"email\":\"test2@test.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login recently created user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test2\",\r\n    \"password\":\"eyhola\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get nearby restaurants",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwidXNlcklkIjoiNjI0NzI1OTczNDIwYTBhMDNhZGYxZWNhIiwiaWF0IjoxNjQ4ODMwMDExLCJleHAiOjE2NDg5MTY0MTF9.Momd_EETtUPYlK18vCIVVRapvODcp-YqvOEaJH17aLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/places/nearbyRestaurants?lat=4.645821948707192&lng=-74.12839062615888",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"places",
+						"nearbyRestaurants"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "4.645821948707192"
+						},
+						{
+							"key": "lng",
+							"value": "-74.12839062615888"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read user transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
