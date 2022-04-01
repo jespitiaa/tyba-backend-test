@@ -1,0 +1,33 @@
+{
+  "name": "backend-test-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.12",
+    "bcryptjs": "^2.4.3",
+    "blowfish": "^1.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.1",
+    "morgan": "~1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jespitiaa/tyba-backend-test.git"
+  },
+  "author": "jespitiaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jespitiaa/tyba-backend-test/issues"
+  },
+  "homepage": "https://github.com/jespitiaa/tyba-backend-test#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
